@@ -4,6 +4,7 @@
         <div class="container mx-auto px-4 py-6">
           <h1 class="text-3xl font-bold text-emerald-700 dark:text-emerald-300">Backyard Ultra Fundraiser - David Smeringe, särö backyard ultra, 2025-03-29</h1>
           <p class="text-gray-600 dark:text-gray-300 mt-2">Supporting <a href="https://www.bris.se/" class="text-emerald-600 dark:text-emerald-400 hover:underline" target="_blank">Bris</a> - Children's Rights in Society</p>
+          <p>The more laps I run, the more money I raise - and you pay. Simple as that. I'm leaving it to you to honor the pledged amount after ;)</p>
         </div>
       </header>
   
