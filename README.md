@@ -1,4 +1,4 @@
-# Nuxt Minimal Starter
+# BACKYARD FUNDRAISER
 
 Simple Supabase integrated app to raise money when running a backyard ultra :)
 Update texts and purpose to your likening..
