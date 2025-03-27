@@ -2,7 +2,7 @@
     <div class="min-h-screen bg-gradient-to-b from-emerald-50 to-emerald-100 dark:from-emerald-900 dark:to-emerald-800">
       <header class="bg-white dark:bg-emerald-950 shadow-md">
         <div class="container mx-auto px-4 py-6">
-          <h1 class="text-3xl font-bold text-emerald-700 dark:text-emerald-300">Backyard Ultra Insamling - David Smeringe, Särö Backyard Ultra, 2025-03-29</h1>
+          <h1 class="text-3xl font-bold text-emerald-700 dark:text-emerald-300">Insamling - David Smeringe, Särö Backyard Ultra, 2025-03-29</h1>
           <p class="text-gray-600 dark:text-gray-300 mt-2">Stöttar <a href="https://www.bris.se/" class="text-emerald-600 dark:text-emerald-400 hover:underline" target="_blank">Bris</a> - Barnens Rätt i Samhället</p>
           <p>Ju fler varv jag springer, desto mer pengar samlar jag in – och du betalar. Så enkelt är det. Jag litar på att du håller ditt löfte ;)</p>
         </div>
