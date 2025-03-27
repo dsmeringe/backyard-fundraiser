@@ -2,9 +2,9 @@
     <div class="min-h-screen bg-gradient-to-b from-emerald-50 to-emerald-100 dark:from-emerald-900 dark:to-emerald-800">
       <header class="bg-white dark:bg-emerald-950 shadow-md">
         <div class="container mx-auto px-4 py-6">
-          <h1 class="text-3xl font-bold text-emerald-700 dark:text-emerald-300">Backyard Ultra Fundraiser - David Smeringe, särö backyard ultra, 2025-03-29</h1>
-          <p class="text-gray-600 dark:text-gray-300 mt-2">Supporting <a href="https://www.bris.se/" class="text-emerald-600 dark:text-emerald-400 hover:underline" target="_blank">Bris</a> - Children's Rights in Society</p>
-          <p>The more laps I run, the more money I raise - and you pay. Simple as that. I'm leaving it to you to honor the pledged amount after ;)</p>
+          <h1 class="text-3xl font-bold text-emerald-700 dark:text-emerald-300">Backyard Ultra Insamling - David Smeringe, Särö Backyard Ultra, 2025-03-29</h1>
+          <p class="text-gray-600 dark:text-gray-300 mt-2">Stöttar <a href="https://www.bris.se/" class="text-emerald-600 dark:text-emerald-400 hover:underline" target="_blank">Bris</a> - Barnens Rätt i Samhället</p>
+          <p>Ju fler varv jag springer, desto mer pengar samlar jag in – och du betalar. Så enkelt är det. Jag litar på att du håller ditt löfte ;)</p>
         </div>
       </header>
   
@@ -14,15 +14,15 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div class="p-4 bg-emerald-50 dark:bg-emerald-900 rounded-lg">
               <h2 class="text-2xl font-bold text-emerald-700 dark:text-emerald-300">{{ laps }}</h2>
-              <p class="text-gray-600 dark:text-gray-400">Laps Completed</p>
+              <p class="text-gray-600 dark:text-gray-400">Avklarade Varv</p>
             </div>
             <div class="p-4 bg-emerald-50 dark:bg-emerald-900 rounded-lg">
               <h2 class="text-2xl font-bold text-emerald-700 dark:text-emerald-300">{{ totalPledgers }}</h2>
-              <p class="text-gray-600 dark:text-gray-400">Supporters</p>
+              <p class="text-gray-600 dark:text-gray-400">Stödjare</p>
             </div>
             <div class="p-4 bg-emerald-50 dark:bg-emerald-900 rounded-lg">
               <h2 class="text-2xl font-bold text-emerald-700 dark:text-emerald-300">{{ formatCurrency(totalRaised) }}</h2>
-              <p class="text-gray-600 dark:text-gray-400">Total Raised</p>
+              <p class="text-gray-600 dark:text-gray-400">Totalt Insamlat</p>
             </div>
           </div>
         </div>
@@ -30,25 +30,30 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <!-- Pledge Form -->
           <div class="bg-white dark:bg-emerald-950 rounded-lg shadow-lg p-6">
-            <h2 class="text-2xl font-bold text-emerald-700 dark:text-emerald-300 mb-4">Make a Pledge</h2>
+            <h2 class="text-2xl font-bold text-emerald-700 dark:text-emerald-300 mb-4">Gör ett Löfte</h2>
             <p class="text-gray-600 dark:text-gray-400 mb-6">
-              Pledge an amount per lap completed. You'll only donate based on the final number of laps!
+              Bestäm ett belopp per avklarat varv. Du donerar först efter loppet – baserat på det totala antalet varv!
             </p>
+            <h4 class="text-lg font-bold text-emerald-700 dark:text-emerald-300 mb-2">När jag är slut - och du skall betala:</h4>
+            <ul class="mb-6">
+              <li><a href="https://insamling.bris.se/fundraisers/davids-saro-backyard-ultra?no_navbar=true" class="text-emerald-600 dark:text-emerald-400">Insamlingssida</a> - officiell insamlingssida</li>
+              <li><a href="https://www.bris.se/stod-bris/" class="text-emerald-600 dark:text-emerald-400">Bris gåvosida</a> om du vill göra en egen direktdonation (istället)</li>
+            </ul>
             
             <form @submit.prevent="submitPledge" class="space-y-4">
               <div>
-                <label class="block text-gray-700 dark:text-gray-300 mb-2" for="name">Your Name (Optional)</label>
+                <label class="block text-gray-700 dark:text-gray-300 mb-2" for="name">Ditt Namn (valfritt)</label>
                 <input 
                   type="text" 
                   id="name" 
                   v-model="pledgeForm.name" 
-                  placeholder="Enter your name or leave blank to be anonymous"
+                  placeholder="Fyll i ditt namn eller lämna tomt för att vara anonym"
                   class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:bg-emerald-900 dark:border-emerald-700 dark:text-white"
                 >
               </div>
               
               <div>
-                <label class="block text-gray-700 dark:text-gray-300 mb-2" for="amount">Amount per Lap (SEK)</label>
+                <label class="block text-gray-700 dark:text-gray-300 mb-2" for="amount">Belopp per varv (SEK)</label>
                 <input 
                   type="number" 
                   id="amount" 
@@ -61,12 +66,12 @@
               </div>
               
               <div>
-                <label class="block text-gray-700 dark:text-gray-300 mb-2" for="message">Message (Optional)</label>
+                <label class="block text-gray-700 dark:text-gray-300 mb-2" for="message">Meddelande (valfritt)</label>
                 <textarea 
                   id="message" 
                   v-model="pledgeForm.message" 
                   rows="3" 
-                  placeholder="Add a message of encouragement"
+                  placeholder="Skriv en uppmuntrande hälsning"
                   class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:bg-emerald-900 dark:border-emerald-700 dark:text-white"
                 ></textarea>
               </div>
@@ -75,28 +80,28 @@
                 type="submit" 
                 class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200"
               >
-                Submit Pledge
+                Skicka Löfte
               </button>
             </form>
           </div>
   
           <!-- Pledgers List -->
           <div class="bg-white dark:bg-emerald-950 rounded-lg shadow-lg p-6">
-            <h2 class="text-2xl font-bold text-emerald-700 dark:text-emerald-300 mb-4">Supporters</h2>
+            <h2 class="text-2xl font-bold text-emerald-700 dark:text-emerald-300 mb-4">Stödjare</h2>
             
             <div class="overflow-y-auto max-h-96">
               <table class="min-w-full">
                 <thead>
                   <tr class="border-b dark:border-emerald-700">
-                    <th class="text-left py-3 px-4 text-gray-700 dark:text-gray-300">Name</th>
-                    <th class="text-right py-3 px-4 text-gray-700 dark:text-gray-300">Amount/Lap</th>
-                    <th class="text-right py-3 px-4 text-gray-700 dark:text-gray-300">Total</th>
+                    <th class="text-left py-3 px-4 text-gray-700 dark:text-gray-300">Namn</th>
+                    <th class="text-right py-3 px-4 text-gray-700 dark:text-gray-300">Belopp/Varv</th>
+                    <th class="text-right py-3 px-4 text-gray-700 dark:text-gray-300">Totalt</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr v-for="(pledger, index) in pledgers" :key="index" class="border-b dark:border-emerald-700">
                     <td class="py-3 px-4 text-gray-800 dark:text-gray-200">
-                      {{ pledger.name || 'Anonymous' }}
+                      {{ pledger.name || 'Anonym' }}
                       <p v-if="pledger.message" class="text-sm text-gray-500 dark:text-gray-400 mt-1 italic">
                         "{{ pledger.message }}"
                       </p>
@@ -110,7 +115,7 @@
                   </tr>
                   <tr v-if="pledgers.length === 0">
                     <td colspan="3" class="py-4 text-center text-gray-500 dark:text-gray-400">
-                      No pledges yet. Be the first to support!
+                      Inga löften ännu. Var först med att stötta!
                     </td>
                   </tr>
                 </tbody>
@@ -121,7 +126,7 @@
   
         <!-- Admin Section (Hidden by default) -->
         <div v-if="showAdmin" class="mt-8 bg-white dark:bg-emerald-950 rounded-lg shadow-lg p-6">
-          <h2 class="text-2xl font-bold text-emerald-700 dark:text-emerald-300 mb-4">Admin Controls</h2>
+          <h2 class="text-2xl font-bold text-emerald-700 dark:text-emerald-300 mb-4">Adminverktyg</h2>
           
           <div class="flex items-center space-x-4">
             <button 
@@ -149,7 +154,7 @@
       <footer class="bg-white dark:bg-emerald-950 shadow-inner mt-8 py-6">
         <div class="container mx-auto px-4 text-center">
           <p class="text-gray-600 dark:text-gray-400">
-            Running for a cause - Supporting <a href="https://www.bris.se/" class="text-emerald-600 dark:text-emerald-400 hover:underline" target="_blank">Bris</a>
+            Springer för en god sak – Stöttar <a href="https://www.bris.se/" class="text-emerald-600 dark:text-emerald-400 hover:underline" target="_blank">Bris</a>
           </p>
           <button 
             @click="toggleAdmin" 
